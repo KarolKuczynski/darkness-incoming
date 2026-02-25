@@ -12,5 +12,7 @@
             Height = height;
             MapObjects = new Object[Width, Height];
         }
+
+        public
     }
 }
