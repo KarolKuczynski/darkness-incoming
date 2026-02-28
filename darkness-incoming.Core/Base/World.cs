@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using darkness_incoming.Core.Maps;
 
 namespace darkness_incoming.Core.Base
 {
     public class World
     {
-        public Map Map { get; }
+        public Map CurrentMap { get; }
        
-
         public World()
         {
-            Map = new Map(100, 100);
+            CurrentMap = new TestMap();
             
         }
     }

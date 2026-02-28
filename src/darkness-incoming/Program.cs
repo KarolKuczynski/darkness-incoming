@@ -1,11 +1,12 @@
-﻿Game game = new Game();
+﻿using darkness_incoming.Core.Base;
+
+Game game = new Game();
 game.Run();
-
-
 
 class Game
 {
     private bool isRunning;
+    World world = new World();
 
     public Game()
     {
@@ -14,8 +15,11 @@ class Game
 
     public void Run() 
     {
+        Draw();
+
         while (isRunning)
         {
+            
             HandleInput();
         }
     }
@@ -33,5 +37,28 @@ class Game
                     return;
             }
         }
+    }
+
+    private void Draw()
+    {
+        Console.SetCursorPosition(0, 0);
+
+        Map map = world.CurrentMap;
+
+        for (int y = 0; y < map.Height; y++)
+        {
+            for (int x = 0; x < map.Width; x++)
+            {
+                if (map.MapObjects[x,y] != null)
+                {
+                    var obj = map.MapObjects[x,y];
+                    Console.SetCursorPosition(x, y);
+                    obj.DrawTile();
+                }
+            }
+            Console.WriteLine();
+        }
+        Console.SetCursorPosition(0, 0);
+        Console.ResetColor();
     }
 }

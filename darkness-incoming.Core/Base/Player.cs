@@ -2,6 +2,6 @@
 {
     public class Player : Entity
     {
-        public Player(int x, int y, Tile tile) : base(x, y, tile) { }
+        public Player(int x, int y, char symbol, ConsoleColor color) : base(x, y, symbol, color) { }
     }
 }

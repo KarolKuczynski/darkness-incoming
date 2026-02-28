@@ -4,15 +4,15 @@
     {
         public int Width { get; }
         public int Height { get; }
-        public Object[,] MapObjects { get; }
+        public MapObject[,] MapObjects { get; }
 
         public Map(int width, int height)
         {
             Width = width;
             Height = height;
-            MapObjects = new Object[Width, Height];
+            MapObjects = new MapObject[Width, Height];
         }
 
-        public
+        
     }
 }
